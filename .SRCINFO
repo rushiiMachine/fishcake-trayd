@@ -1,0 +1,20 @@
+pkgbase = fishcake-trayd
+	pkgdesc = Persistent fishcake tray icon
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/rushiiMachine/fishcake-trayd
+	install = fishcake-trayd.install
+	arch = any
+	license = GPL3
+	depends = python3
+	depends = gtk3
+	depends = libayatana-appindicator
+	optdepends = gnome-shell-extension-appindicator: Tray icons support for gnome-shell
+	source = fishcake-trayd
+	source = fishcake-trayd.service
+	source = fishcake-tray.svg
+	sha256sums = 64ce606d4d47de817f602a9456dfc395ca2299f3ea8357760a25ca46b62fe924
+	sha256sums = 9bf1cab95deb3cfc3126de81856303019499926ea069dad6362cc4b80040d73b
+	sha256sums = 9b91a0f778c4072c4446599a6e62e42d5c107bd735db8783eaf5377ad666ba28
+
+pkgname = fishcake-trayd

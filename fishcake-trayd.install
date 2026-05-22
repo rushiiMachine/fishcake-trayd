@@ -1,0 +1,6 @@
+#!/bin/sh
+
+post_install() {
+	echo ":: To immediately launch the fishcake tray icon, run: systemctl --user start fishcake-trayd.service"
+	echo ":: If using gnome-shell, make sure to enable the extension 'AppIndicator and KStatusNotification Support'!"
+}

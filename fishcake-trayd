@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+
+import signal
+import gi
+
+gi.require_version("Gtk", "3.0")
+gi.require_version("AyatanaAppIndicator3", "0.1")
+
+from gi.repository import Gtk
+from gi.repository import AyatanaAppIndicator3 as AppIndicator3
+
+class CustomIndicator:
+    def __init__(self):
+        self.indicator = AppIndicator3.Indicator.new(
+            "fishcake-trayd", # App ID
+            "fishcake-tray", # Icon ID
+            AppIndicator3.IndicatorCategory.APPLICATION_STATUS,
+        )
+        self.indicator.set_status(AppIndicator3.IndicatorStatus.ACTIVE)
+        self.indicator.set_menu(Gtk.Menu())
+
+    def run(self):
+        Gtk.main()
+
+def main():
+    app = CustomIndicator()
+    signal.signal(signal.SIGINT, signal.SIG_DFL)  # Allow Ctrl+C to exit the application
+    app.run()
+
+if __name__ == '__main__':
+    main()
