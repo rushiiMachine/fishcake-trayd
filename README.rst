@@ -28,11 +28,11 @@ Installation
 
       $ sudo pacman -S gnome-shell-extension-appindicator
 
-3. Start the ``fishcake-trayd`` systemd service:
+3. Enable and start the ``fishcake-trayd`` systemd service:
 
    .. code-block:: shell
 
-       $ systemctl --user start fishcake-trayd.service
+       $ systemctl --user enable --now fishcake-trayd.service
 
 4. You now have a fishcake 🍥 in your system tray!
 
