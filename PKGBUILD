@@ -21,13 +21,19 @@ source=(
     "${pkgname}"
     "${pkgname}.service"
     "fishcake-tray.svg"
+    "LICENSE"
+    "README.rst"
 )
 sha256sums=('64ce606d4d47de817f602a9456dfc395ca2299f3ea8357760a25ca46b62fe924'
             '9bf1cab95deb3cfc3126de81856303019499926ea069dad6362cc4b80040d73b'
-            '9b91a0f778c4072c4446599a6e62e42d5c107bd735db8783eaf5377ad666ba28')
+            '9b91a0f778c4072c4446599a6e62e42d5c107bd735db8783eaf5377ad666ba28'
+            '3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986'
+            'aee1917a55aeea484673c0ad7495c9cbf5f33713c921f21fed031104bac9fcbc')
 
 package() {
     install -Dm755 "${pkgname}" "$pkgdir/usr/bin/${pkgname}"
     install -Dm644 "${pkgname}.service" "$pkgdir/usr/share/systemd/user/${pkgname}.service"
     install -Dm644 "fishcake-tray.svg" "$pkgdir/usr/share/icons/hicolor/scalable/status/fishcake-tray.svg"
+    install -Dm644 "LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
+    install -Dm644 "README.rst" -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
